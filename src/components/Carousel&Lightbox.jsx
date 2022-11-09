@@ -15,7 +15,7 @@ export default class Gallery extends React.Component {
       showGalleryFullscreenButton: false,
       showPlayButton: false,
       showGalleryPlayButton: false,
-      showNav: false,
+      showNav: true,
       isRTL: false,
       slideDuration: 450,
       slideInterval: 2000,

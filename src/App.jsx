@@ -5,22 +5,21 @@ import Container from '@mui/material/Container';
 import { Divider } from '@mui/material';
 import Gallery from './components/Carousel&Lightbox';
 import Box from '@mui/material/Box'
+import ProductInfo from './components/ProductInfo';
 
 
 function App() {
-  const view = {
-    position: 'relative',
-    marginTop: '7.5%',
-    width: '45%',
-    transform: 'translateX(-15%)'
-  }
-  // position: "relative", marginTop: "7.5%", width: "45%", transform: "translateX(-15%)"
-
   return (
     <Container maxWidth="xl" disableGutters>
       <Navbar/>
       <Divider/>
-      <Container disableGutters sx={{display: "flex", position: 'absolute', width: '100%'}}>
+      <Container disableGutters sx={{display: "flex", width: '100%', flexDirection: {
+        xs: 'column',
+        sm: 'column',
+        md: 'row',
+        lg: 'row',
+        xl: 'row'
+      }}}>
         <Box sx={{
           position: {
             xs: 'relative',
@@ -29,32 +28,28 @@ function App() {
             lg: 'relative',
             xl: 'relative'
           },
-          marginTop: {
-            xs: '7.5%',
-            sm: '7.5%',
-            md: '7.5%',
+          marginTop: {     
+            // md: '7.5%',
             lg: '7.5%',
             xl: '7.5%'
           },
           width: {
             xs: '100%',
             sm: '100%',
-            md: '45%',
-            lg: '45%',
-            xl: '45%'
+            md: '40%',
+            lg: '40%',
+            xl: '40%'
           },
           transform: {
-            xs: 'translateY(-15%)',
-            sm: 'translateY(-15%)',
-            md: 'translateY(-15%)',
-            lg: 'translateY(-15%)',
-            xl: 'translateY(-15%)'
+            // md: 'translateX(-15%)',
+            lg: 'translateX(-15%)',
+            xl: 'translateX(-15%)'
           },
           }}>
           <Gallery/>
         </Box>
-        <Box sx={{position: "relative", margin: "7.5%"}}>
-          
+        <Box sx={{position: "relative", margin: "7.5%", maxWidth: "35%"}}>
+          <ProductInfo/>
         </Box>
       </Container>
     </Container>

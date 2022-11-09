@@ -19,7 +19,8 @@ const theme = createTheme(
       button: {
         textTransform: 'none',
         fontSize: '16px'
-      }
+      },
+      fontFamily: "'Kumbh Sans', sans-serif"
     }
   }
 )
