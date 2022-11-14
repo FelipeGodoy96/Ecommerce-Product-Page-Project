@@ -26,7 +26,7 @@ const pages = ['Collections', 'Men', 'Women', 'About', 'Contact']
 const settings = ['My Account', 'Logout']
 const cart = ['teste']
 
-function ResponsiveAppBar() {
+function ResponsiveAppBar(props) {
   const [anchorElNav, setAnchorElNav] = React.useState(null)
   const [anchorElUser, setAnchorElUser] = React.useState(null)
   const [anchorElCart, setAnchorElCart] = React.useState(null)
@@ -111,31 +111,6 @@ function ResponsiveAppBar() {
           >
             {list()}
           </Drawer>
-       
-            {/* <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left'
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left'
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' }
-              }}
-            >
-              {pages.map(page => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu> */}
             {/* LOGO mobile/small devices*/}
             <Box
               sx={{ display: { xs: 'block', md: 'none' }, alignSelf: 'center' }}

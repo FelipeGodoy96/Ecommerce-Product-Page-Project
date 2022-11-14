@@ -13,6 +13,12 @@ const theme = createTheme(
       },
       white: {
         main: 'hsl(0, 0%, 100%)'
+      },
+      neutral: {
+        verydarkblue: 'hsl(220, 13%, 13%)',
+        darkgrayishblue: 'hsl(219, 9%, 45%)',
+        grayishblue: 'hsl(220, 14%, 75%)',
+        black: 'hsl(0, 0%, 75%)'
       }
     },
     typography: { 
@@ -20,7 +26,20 @@ const theme = createTheme(
         textTransform: 'none',
         fontSize: '16px'
       },
-      fontFamily: "'Kumbh Sans', sans-serif"
+      fontFamily: "'Kumbh Sans', sans-serif",
+      fontSize: 16,
+      h1: {
+        fontFamily: "'Kumb Sans', sans-serif",
+      },
+      h2: {
+        fontFamily: "'Kumb Sans', sans-serif",
+      },
+      h3: {
+        fontFamily: "'Kumb Sans', sans-serif",
+      },
+      h6: {
+        letterSpacing: "0.25rem"
+      }
     }
   }
 )

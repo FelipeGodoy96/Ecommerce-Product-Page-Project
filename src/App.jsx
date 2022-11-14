@@ -9,8 +9,10 @@ import ProductInfo from './components/ProductInfo';
 
 
 function App() {
+
   return (
-    <Container maxWidth="xl" disableGutters>
+   
+      <Container maxWidth="xl" disableGutters>
       <Navbar/>
       <Divider/>
       <Container disableGutters sx={{display: "flex", width: '100%', flexDirection: {
@@ -20,6 +22,7 @@ function App() {
         lg: 'row',
         xl: 'row'
       }}}>
+        {/* Gallery */}
         <Box sx={{
           position: {
             xs: 'relative',
@@ -48,11 +51,13 @@ function App() {
           }}>
           <Gallery/>
         </Box>
-        <Box sx={{position: "relative", margin: "7.5%", maxWidth: "35%"}}>
-          <ProductInfo/>
-        </Box>
+        {/* <Box sx={{position: "relative", margin: "7.5%", maxWidth: "35%"}}> */}
+          <ProductInfo />
+          
+        {/* </Box> */}
       </Container>
     </Container>
+    
   )
 }
 
