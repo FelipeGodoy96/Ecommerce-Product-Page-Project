@@ -51,10 +51,7 @@ function App() {
           }}>
           <Gallery/>
         </Box>
-        {/* <Box sx={{position: "relative", margin: "7.5%", maxWidth: "35%"}}> */}
           <ProductInfo />
-          
-        {/* </Box> */}
       </Container>
     </Container>
     

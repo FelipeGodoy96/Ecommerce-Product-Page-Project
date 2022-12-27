@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button'
 import { Typography } from '@mui/material';
 import { useContext } from 'react';
 import { ThemeContext } from '@emotion/react';
@@ -23,21 +24,29 @@ export default function ProductInfo () {
         <Typography variant='p' color={theme.palette.neutral.darkgrayishblue} width="100%">
           These low-profile sneakers are your perfect casual wear companion.
           Featuring a durable rubbler outer sole, they'll withstand everything the weather can offer.
-          
-          
         </Typography>
-       
       </Box>
-     
- {/* <p style={{lineHeight: '3rem', color: 'hsl(26, 100%, 55%)', fontStyle: 'bold', fontWeight: '700', marginTop: '3rem', marginBottom: '1rem', letterSpacing: '0.15rem'}}>SNEAKER COMPANY</p>
-    <p style={{fontSize: '36px', lineHeight: '2rem', fontWeight: '700', color: 'hsl(220, 13%, 13%)'}}>Fall Limited Edition Sneakers</p>
-    <p style={{marginTop: '2em', marginBottom: '2em', color: 'hsl(219, 9%, 45%'}}>
-      These low-profile sneakers are your perfect casual wear companion.
-      Featuring a durable rubber outer sole, they'll withstand everything the weatehr can offer.
-    </p>
-    <p style={{fontWeight: '700', fontSize: '24px'}}>$125.00 <span style={{backgroundColor: 'hsl(25, 100%, 94%)', color: 'hsl(26, 100%, 55%)', fontSize: '18px'}}>50%</span></p>
-    <p style={{textDecoration: 'line-through', color: 'hsl(219, 9%, 45%'}}>$250.00</p> */}
-    
+      <Box classes="productPrice" sx={{marginTop: "10%", marginBottom: "10%"}}>
+        <Typography variant='p' sx={{fontSize: "1.5rem", fontWeight: "700"}}>
+          $125.00
+        </Typography>
+        <span className='discountPercentage' style={{color: theme.palette.primary.main, fontWeight: "700", backgroundColor: theme.palette.primary.light, marginLeft: "5%", marginRight: "5%", fontSize: "1.2rem"}}>
+          50%
+        </span>
+        <Typography classes="productFullPrice" sx={{fontSize: '14px', marginTop: "5px", textDecoration: "line-through", color: theme.palette.neutral.verydarkblue}}>
+          $250.00
+        </Typography>
+      </Box>
+      <Box classes="inputQuantity" sx={{marginTop: "10%", display: 'flex', flexDirection: 'row'}}>
+        <Box className="increaseAndDecrease">
+          <Button sx={{backgroundColor: theme.palette.neutral.grayishblue}}>-</Button><span>1</span><Button sx={{backgroundColor: theme.palette.neutral.grayishblue}}>+</Button>
+        </Box>
+        <Box>
+          <Button>
+            Add to cart
+          </Button>
+        </Box>
+      </Box>
    </Box>
   
   )
