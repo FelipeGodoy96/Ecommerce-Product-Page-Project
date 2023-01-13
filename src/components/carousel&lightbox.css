@@ -265,6 +265,7 @@
 
 .image-gallery-thumbnails-wrapper {
   position: relative;
+  overflow: hidden;
 }
 @media (max-width: 900px) {
   .image-gallery-thumbnails-wrapper {
@@ -351,7 +352,7 @@
 .image-gallery-thumbnail {
   display: inline-block;
   border: 3px solid transparent;
-  transition: border 0.3s ease-out;
+  transition: border 0.3s;
   width: 100px;
   background: transparent;
   padding: 0;
