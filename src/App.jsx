@@ -12,7 +12,7 @@ function App() {
 
   return (
    
-      <Container maxWidth="xl" disableGutters>
+      <Container maxWidth="xl" disableGutters sx={{overflowX: "hidden"}}>
       <Navbar/>
       <Divider/>
       <Container disableGutters sx={{display: "flex", width: '100%', flexDirection: {

@@ -24,7 +24,17 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 
 const pages = ['Collections', 'Men', 'Women', 'About', 'Contact']
 const settings = ['My Account', 'Logout']
-const cart = ['teste']
+const cart = (
+<div>
+  <h2>Cart</h2>
+  <hr/>
+  <ul style={{display: "flex", justifyContent: "space-between", alignItens: "start"}}>
+    <li><img src={null} /></li>
+    <li>text <span>bold</span></li>
+    <li><button>delete item</button></li>
+  </ul>
+  <button>checkout</button>
+</div>)
 
 function ResponsiveAppBar(props) {
   const [anchorElNav, setAnchorElNav] = React.useState(null)

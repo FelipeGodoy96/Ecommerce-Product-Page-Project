@@ -21,9 +21,9 @@ export default function ProductInfo () {
   }
   const theme = useContext(ThemeContext)
   return (
-    <Box sx={{position: "relative", margin: "7.5%", maxWidth: "35%", width: "100%"}}>
+    <Box sx={{position: "relative", margin: { xs: "2%", sm: "3%" }, maxWidth: {md: "35%", sm: "100%" }, width: "100%", padding: "0.5rem"}}>
       <Box classes="vendorName" sx={{marginTop: "10%", width: "100%"}} backgroundColor={theme.palette.grayishblue}>
-        <Typography variant='h2' color={theme.palette.primary.main} letterSpacing="0.025rem" fontWeight="700" fontSize="0.875rem" lineHeight="1.25rem">   
+        <Typography variant='p' color={theme.palette.primary.main} letterSpacing="0.025rem" fontWeight="700" fontSize="0.875rem" lineHeight="1.25rem" backgroundColor={theme.palette.neutral.grayishblue} padding="5px">   
         SNEAKER COMPANY   
         </Typography>
       </Box>
@@ -50,7 +50,7 @@ export default function ProductInfo () {
         </Typography>
       </Box>
       <Box className="buttonsWrapper" sx={{marginTop: "10%", display: 'flex', flexDirection: 'row'}}>
-        <Box sx={{gap: "20px", width: "100%", lineHeight: "0.5rem", display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+        <Box sx={{gap: "20px", width: "90%", lineHeight: "0.5rem", display: "flex", justifyContent: "space-between", alignItems: "center"}}>
           <ul style={{width: "50%", display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: "2rem", paddingBottom: "2rem", backgroundColor: theme.palette.neutral.grayishblue, borderRadius: "0.5rem", paddingLeft: "20px", paddingRight: "20px", userSelect: "none"}}>
             <li><img src={minusIcon} onClick={handleMinus} style={{cursor: "pointer"}} /></li>
           <li>{quantity}</li><img src={plusIcon} onClick={handlePlus} style={{cursor: "pointer"}}/></ul>
