@@ -1,6 +1,14 @@
 import ImageGallery from "react-image-gallery";
 import React from "react";
 import './carousel&lightbox.css'
+import product1 from '../assets/images/image-product-1.jpg'
+import product1thumb from '../assets/images/image-product-1-thumbnail.jpg'
+import product2 from '../assets/images/image-product-2.jpg'
+import product2thumb from '../assets/images/image-product-2-thumbnail.jpg'
+import product3 from '../assets/images/image-product-3.jpg'
+import product3thumb from '../assets/images/image-product-3-thumbnail.jpg'
+import product4 from '../assets/images/image-product-4.jpg'
+import product4thumb from '../assets/images/image-product-4-thumbnail.jpg'
 
 export default class Gallery extends React.Component {
 
@@ -27,20 +35,20 @@ export default class Gallery extends React.Component {
 
     this.images = [
       {
-        original: 'src/assets/images/image-product-1.jpg',
-        thumbnail:  'src/assets/images/image-product-1-thumbnail.jpg'
+        original: product1,
+        thumbnail:  product1thumb
       },
       {
-        original: 'src/assets/images/image-product-2.jpg',
-        thumbnail: 'src/assets/images/image-product-2-thumbnail.jpg'
+        original: product2,
+        thumbnail:  product2thumb
       },
       {
-        original: 'src/assets/images/image-product-3.jpg',
-        thumbnail: 'src/assets/images/image-product-3-thumbnail.jpg'
+       original: product3,
+        thumbnail:  product3thumb
       },
       {
-        original: 'src/assets/images/image-product-4.jpg',
-        thumbnail: 'src/assets/images/image-product-4-thumbnail.jpg'
+        original: product4,
+        thumbnail:  product4thumb
       },
     ]
   }
