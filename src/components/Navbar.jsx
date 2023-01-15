@@ -26,8 +26,7 @@ import logo from '../assets/images/logo.svg'
 import product1thumb from '../assets/images/image-product-1-thumbnail.jpg'
 import Divider from '@mui/material/Divider';
 import deleteBtn from '../assets/images/icon-delete.svg'
-import { ThemeContext } from '@emotion/react';
-import { text } from '@fortawesome/fontawesome-svg-core';
+
 
 const pages = ['Collections', 'Men', 'Women', 'About', 'Contact']
 const settings = ['My Account', 'Logout']
@@ -65,27 +64,6 @@ function ResponsiveAppBar(props) {
     setAnchorElNav(state)
   }
 
-  const list = () => (
-    <Box
-      sx={{ width: '60vw'}}
-      role="presentation"
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
-    >
-      <List>
-        {pages.map((text,index) => {
-          <ListItem key={index} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon/> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text}/>
-            </ListItemButton>
-          </ListItem>
-        })}
-      </List>
-    </Box>
-  )
       
   const handleCloseCart = () => {
     setAnchorElCart(null)
@@ -128,7 +106,23 @@ function ResponsiveAppBar(props) {
             open={Boolean(anchorElNav)}
             onClose={toggleDrawer(anchorElNav)}
           >
-            {list()}
+             <Box
+      sx={{ width: '60vw'}}
+      role="presentation"
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
+    >
+      <List>
+        {pages.map((text,index) => (
+          <ListItem key={index} disablePadding>
+            <ListItemButton>
+              <ListItemText primary={text}/>
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+            
           </Drawer>
             {/* LOGO mobile/small devices*/}
             <Box
