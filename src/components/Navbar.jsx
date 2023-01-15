@@ -21,6 +21,8 @@ import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import Link from '@mui/material/Link'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
+import avatar from '../assets/images/avatar.png'
+import logo from '../assets/images/logo.svg'
 
 const pages = ['Collections', 'Men', 'Women', 'About', 'Contact']
 const settings = ['My Account', 'Logout']
@@ -99,7 +101,7 @@ function ResponsiveAppBar(props) {
             sx={{ display: { xs: 'none', md: 'block' }, marginRight: '3rem' }}
           >
             <Link href="/">
-              <img src="src/assets/images/logo.svg" />
+              <img src={logo} />
             </Link>
           </Box>
           {/* Menu Mobile devices */}
@@ -195,7 +197,7 @@ function ResponsiveAppBar(props) {
               >
                 <Avatar
                   alt="avatar"
-                  src="src/assets/images/avatar.png"
+                  src={avatar}
                   sx={{
                     width: '2.5rem',
                     height: '2.5rem',
