@@ -16,10 +16,17 @@ import { CartContext } from '../context/context';
 
 export default function ProductInfo () {
   const handleAddToCart = () => {
-    setCartItem({
+    if (quantity > 0) {
+      setCartItem({
       productInfo,
       quantity
     })
+    }
+    else {
+      return
+    }
+    
+    
 
   }
   const {productInfo, setProductInfo} = useContext(ProductContext)

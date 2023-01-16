@@ -180,7 +180,7 @@ function ResponsiveAppBar(props) {
               open={Boolean(anchorElCart)}
               onClose={handleCloseCart}
             >
-              <MenuItem onClick={handleCloseCart} sx={{width: "90vw", height: "250px"}}> 
+              <MenuItem  sx={{width: {sm: "90vw", md: "20vw", lg: cartItem == null ? "15vw" : "20vw"}, height: cartItem != null ? "250px" : "150px"}}> 
               <Box sx={{display: "flex", flexDirection: "column", justifyContent: "space-between", height: "90%"}}>
 <h2 sx={{}}>Cart</h2>
   <Divider />
