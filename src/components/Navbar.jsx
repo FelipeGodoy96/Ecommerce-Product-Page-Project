@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useContext } from 'react';
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer';
@@ -26,24 +27,19 @@ import logo from '../assets/images/logo.svg'
 import product1thumb from '../assets/images/image-product-1-thumbnail.jpg'
 import Divider from '@mui/material/Divider';
 import deleteBtn from '../assets/images/icon-delete.svg'
+import { CartContext, ProductContext } from '../context/context';
 
 
 const pages = ['Collections', 'Men', 'Women', 'About', 'Contact']
 const settings = ['My Account', 'Logout']
-const textCart = "Autumn Limited Edition Sneakers"
-const cart = (
-<Box sx={{display: "flex", flexDirection: "column", justifyContent: "space-between", height: "90%"}}>
-<h2 sx={{}}>Cart</h2>
-  <Divider />
-  <ul style={{whiteSpace: "pre-wrap", wordWrap: "break-word", display: "flex", justifyContent: "start", alignItens: "start"}}>
-    <li style={{width: "25%"}}><img src={product1thumb}  style={{width: "80%", borderRadius: "0.5rem"}}/></li>
-    <li style={{width: "60%"}}>{`${textCart.substring(0, 18)}... `}$125.00 x 3 <span style={{fontWeight: "bold"}}>$375.00</span></li>
-    <li style={{width: "15%"}}><Button ><img src={deleteBtn} /> </Button></li>
-  </ul>
-  <Button sx={{borderRadius: "0.5rem", paddingLeft: "20px", color: "#FFF", paddingRight: "20px", width: "100%", textAlign: "center", justifyContent: "center", backgroundColor: "HSL(26, 100%, 55%)"}}>checkout</Button>
-</Box>)
+
 
 function ResponsiveAppBar(props) {
+  const {productInfo, setProductInfo } = useContext(ProductContext)
+  const {cartItem, setCartItem } = useContext(CartContext)
+  const handleDeleteCartItem = () => {
+    setCartItem(null)
+  }
 
   const [anchorElNav, setAnchorElNav] = React.useState(null)
   const [anchorElUser, setAnchorElUser] = React.useState(null)
@@ -185,7 +181,18 @@ function ResponsiveAppBar(props) {
               onClose={handleCloseCart}
             >
               <MenuItem onClick={handleCloseCart} sx={{width: "90vw", height: "250px"}}> 
-                {cart}
+              <Box sx={{display: "flex", flexDirection: "column", justifyContent: "space-between", height: "90%"}}>
+<h2 sx={{}}>Cart</h2>
+  <Divider />
+  {cartItem != null &&  <div><ul style={{whiteSpace: "pre-wrap", wordWrap: "break-word", display: "flex", justifyContent: "start", alignItens: "start"}}>
+    <li style={{width: "25%"}}><img src={productInfo.image}  style={{width: "80%", borderRadius: "0.5rem"}}/></li>
+    <li style={{width: "60%"}}>{`${productInfo.subtitle.substring(0, 18)}... `}{<br/>}{parseFloat((cartItem.productInfo.price * (cartItem.productInfo.discount / 100))).toFixed(2) + ` x ` + cartItem.quantity} <span style={{fontWeight: "bold"}}>${parseFloat(cartItem.quantity * ((cartItem.productInfo.price) * cartItem.productInfo.discount / 100)).toFixed(2) }</span></li>
+    <li style={{width: "15%"}}><Button onClick={handleDeleteCartItem}><img src={deleteBtn} /> </Button></li>
+  </ul>
+  <Button sx={{borderRadius: "0.5rem", paddingLeft: "20px", color: "#FFF", paddingRight: "20px", width: "100%", textAlign: "center", justifyContent: "center", backgroundColor: "HSL(26, 100%, 55%)"}}>checkout</Button>
+  </div>}
+  {cartItem == null && <Typography>Your cart is empty.</Typography>}
+</Box>
               </MenuItem>
             </Menu>
           </Box>

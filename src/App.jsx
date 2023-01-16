@@ -6,13 +6,14 @@ import { Divider } from '@mui/material';
 import Gallery from './components/Carousel&Lightbox';
 import Box from '@mui/material/Box'
 import ProductInfo from './components/ProductInfo';
-
+import { CartContextProvider, ProductInfoContext } from './context/context'
 
 function App() {
 
   return (
-   
-      <Container maxWidth="xl" disableGutters sx={{overflowX: "hidden"}}>
+    <CartContextProvider>
+      <ProductInfoContext>
+        <Container maxWidth="xl" disableGutters sx={{overflowX: "hidden"}}>
       <Navbar/>
       <Divider/>
       <Container disableGutters sx={{display: "flex", width: '100%', flexDirection: {
@@ -54,6 +55,11 @@ function App() {
           <ProductInfo />
       </Container>
     </Container>
+    </ProductInfoContext>
+    </CartContextProvider>
+    
+   
+    
     
   )
 }
