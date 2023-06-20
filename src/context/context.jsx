@@ -11,6 +11,7 @@ export const ProductInfoContext = props => {
         subtitle: 'Autumn Limited Edition',
         price: 250.00,
         discount: 50,
+        inventory: 32,
         vendor: 'Sneakers Company',
         image: thumb1,
         description: "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubbler outer sole, they'll withstand everything the weather can offer."
